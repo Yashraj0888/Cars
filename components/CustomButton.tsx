@@ -1,10 +1,10 @@
-"use client"
+"use client" 
 
 import React from 'react'
 import Image from 'next/image'
 import { CustomButtonPropes } from '@/types'
 
-const CustomButtom = ({title,containerStyles,handleClick,btnType}:CustomButtonPropes) => {
+const CustomButton = ({title,containerStyles,handleClick,btnType,textStyle,rightIcon,isDisabled}:CustomButtonPropes) => {
   return (
     <div>
       <button 
@@ -13,7 +13,7 @@ const CustomButtom = ({title,containerStyles,handleClick,btnType}:CustomButtonPr
       onClick={handleClick}
       className={`custom-btn ${containerStyles}`}>
 
-        <span className={`flex-1`}>
+        <span className={`flex-1 ${textStyle}`}>
           {title}
 
         </span>
@@ -23,4 +23,4 @@ const CustomButtom = ({title,containerStyles,handleClick,btnType}:CustomButtonPr
   )
 }
 
-export default CustomButtom
+export default CustomButton
