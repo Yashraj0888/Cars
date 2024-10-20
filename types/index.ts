@@ -37,7 +37,7 @@ export interface CarCardProps {
   cityMPG: number;
 }
 
-export interface CustomButtonProps {
+export interface CustomButtonPropes {
   isDisabled?: boolean;
   btnType?: "button" | "submit";
   containerStyles?: string;
