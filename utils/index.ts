@@ -1,13 +1,14 @@
-import { CarProps } from "@/types";
+import { CarProps, FilterProps } from "@/types";
 
-export async function fetchCars() {
+export async function fetchCars( filters:FilterProps) {
+    const {manufacturer,year,model,limit,fuel}=filters
     const headers={
         
             'x-rapidapi-key': 'ac8ff12e81msha3593b516ef9637p11afbdjsn1e9e946a1a94',
             'x-rapidapi-host': 'cars-by-api-ninjas.p.rapidapi.com'
 
     }
-    const response=await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla',{
+    const response=await fetch(`https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel=${fuel}`,{
         headers:headers,
     })
     const result=await response.json();
@@ -57,9 +58,9 @@ export const calculateRent = (car: CarProps): string => {
 
     let luxuryMultiplier = 1.1; // Default for unknown brands
     if (luxuryBrands.includes(car.make.toLowerCase())) {
-        luxuryMultiplier = 1.5;
+        luxuryMultiplier = 10.5;
     } else if (midTierBrands.includes(car.make.toLowerCase())) {
-        luxuryMultiplier = 1.2;
+        luxuryMultiplier = 10.2;
     } else if (economyBrands.includes(car.make.toLowerCase())) {
         luxuryMultiplier = 1.0;
     }
@@ -72,3 +73,16 @@ export const calculateRent = (car: CarProps): string => {
 
     return rentINR;
 };
+export const updateSearchParams = (type: string, value: string) => {
+    // Get the current URL search params
+    const searchParams = new URLSearchParams(window.location.search);
+  
+    // Set the specified search parameter to the given value
+    searchParams.set(type, value);
+  
+    // Set the specified search parameter to the given value
+    const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
+  
+    return newPathname;
+  };
+

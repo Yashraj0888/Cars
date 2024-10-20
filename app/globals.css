@@ -92,8 +92,9 @@
 }
 
 .car-card__content {
-  @apply w-full flex justify-between items-start gap-2;
+  @apply w-full flex flex-col justify-between items-start gap-2;
 }
+
 
 .car-card__content-title {
   @apply text-[22px] leading-[26px] font-bold capitalize;
@@ -215,3 +216,31 @@
 
 .search-manufacturer__option {
   @apply cursor-default select-none py-2 pl-10 pr-4;}
+
+/* Scrollbar styles */
+/* Scrollbar styles */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #D1D5DB transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px; /* Make the scrollbar thinner */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #D1D5DB; /* Tailwind gray-300 */
+  border-radius: 20px; /* More rounding for the thumb */
+}
+
+/* Remove arrows for WebKit browsers */
+.custom-scrollbar::-webkit-scrollbar-button {
+  height: 0;
+  width: 0;
+  display: none;
+}
+
