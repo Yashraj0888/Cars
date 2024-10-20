@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { CustomButtonPropes } from '@/types';
+import { CustomButtonProps } from '@/types';
+
 
 const CustomButton = ({ 
     title, 
@@ -12,7 +13,7 @@ const CustomButton = ({
     textStyle, 
     rightIcon, 
     isDisabled 
-}: CustomButtonPropes) => {
+}: CustomButtonProps) => {
     return (
         <button 
             disabled={isDisabled} // Use isDisabled to control button state

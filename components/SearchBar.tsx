@@ -68,10 +68,10 @@ const SearchBar = () => {
       <div className='searchbar__items'>
             <SearchManufacturer
             manufacturer={manufacturer}
-            setManufacturer={setManuFacturer}   
+            setManuFacturer={setManuFacturer}   
             />
         </div>
-      <div className='searchbar__item'>
+        <div className='searchbar__item'>
         <Image
           src='/model-icon.png'
           width={25}
