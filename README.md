@@ -1,6 +1,6 @@
 # Car Showcase
 
-Welcome to **Car Showcase**, a dynamic web application that provides detailed insights into various car models and their specifications. This site is hosted on [Vercel](https://carshowcase-steel.vercel.app/).
+Welcome to **Car Showcase**, a dynamic web application that provides detailed insights into various car models and their specifications. This site is hosted on Vercel [ Click here for demo](https://carshowcase-steel.vercel.app/).
 
 ## Project Overview
 
